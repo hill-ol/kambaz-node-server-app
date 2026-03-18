@@ -1,0 +1,127 @@
+export default [
+  { _id: "M101", name: "Week 1, Lecture 1 - Course Introduction, Syllabus, Agenda", course: "1234",
+    lessons: [
+      { _id: "L101", name: "LEARNING OBJECTIVES" },
+      { _id: "L102", name: "Introduction to the course" },
+      { _id: "L103", name: "Learn what is Web Development" },
+      { _id: "L104", name: "Creating a development environment" },
+      { _id: "L105", name: "Creating a Web Application" },
+    ]},
+  { _id: "M102", name: "Week 1, Lecture 2 - Formatting User Interfaces with HTML", course: "1234",
+    lessons: [
+      { _id: "L201", name: "LEARNING OBJECTIVES" },
+      { _id: "L202", name: "Learn how to create user interfaces with HTML" },
+      { _id: "L203", name: "Keep working on assignment" },
+      { _id: "L204", name: "Deploy the assignment to Netlify" },
+    ]},
+  { _id: "M103", name: "Week 2 - Cascading Style Sheets", course: "1234",
+    lessons: [
+      { _id: "L301", name: "LEARNING OBJECTIVES" },
+      { _id: "L302", name: "Learn how to style with CSS" },
+      { _id: "L303", name: "Styling with the STYLE attribute" },
+    ]},
+  { _id: "M104", name: "Week 3 - JavaScript and React", course: "1234",
+    lessons: [
+      { _id: "L401", name: "LEARNING OBJECTIVES" },
+      { _id: "L402", name: "Learn JavaScript fundamentals" },
+      { _id: "L403", name: "Introduction to React components" },
+    ]},
+  { _id: "M201", name: "Week 1 - Co-op Orientation", course: "1210",
+    lessons: [
+      { _id: "L501", name: "Introduction to Co-op Program" },
+      { _id: "L502", name: "Resume and Cover Letter Workshop" },
+      { _id: "L503", name: "Professional Communication Skills" },
+    ]},
+  { _id: "M202", name: "Week 2 - Career Development", course: "1210",
+    lessons: [
+      { _id: "L504", name: "Interview Preparation" },
+      { _id: "L505", name: "Networking Strategies" },
+      { _id: "L506", name: "LinkedIn and Online Presence" },
+    ]},
+  { _id: "M203", name: "Week 3 - Workplace Skills", course: "1210",
+    lessons: [
+      { _id: "L507", name: "Time Management" },
+      { _id: "L508", name: "Workplace Ethics" },
+    ]},
+  { _id: "M301", name: "Week 1 - Introduction to Machine Learning", course: "4400",
+    lessons: [
+      { _id: "L601", name: "What is Machine Learning?" },
+      { _id: "L602", name: "Supervised vs Unsupervised Learning" },
+      { _id: "L603", name: "Setting up Python environment" },
+    ]},
+  { _id: "M302", name: "Week 2 - Linear Regression", course: "4400",
+    lessons: [
+      { _id: "L604", name: "Simple Linear Regression" },
+      { _id: "L605", name: "Multiple Linear Regression" },
+      { _id: "L606", name: "Gradient Descent" },
+    ]},
+  { _id: "M303", name: "Week 3 - Classification", course: "4400",
+    lessons: [
+      { _id: "L607", name: "Logistic Regression" },
+      { _id: "L608", name: "Decision Trees" },
+    ]},
+  { _id: "M401", name: "Week 1 - Introduction to Groups", course: "3175",
+    lessons: [
+      { _id: "L701", name: "Definition of a Group" },
+      { _id: "L702", name: "Group Axioms" },
+      { _id: "L703", name: "Examples of Groups" },
+    ]},
+  { _id: "M402", name: "Week 2 - Subgroups", course: "3175",
+    lessons: [
+      { _id: "L704", name: "Subgroup Definition and Tests" },
+      { _id: "L705", name: "Cyclic Groups" },
+    ]},
+  { _id: "M403", name: "Week 3 - Permutation Groups", course: "3175",
+    lessons: [
+      { _id: "L706", name: "Symmetric Groups" },
+      { _id: "L707", name: "Cycle Notation" },
+    ]},
+  { _id: "M501", name: "Week 1 - Information Systems Overview", course: "2301",
+    lessons: [
+      { _id: "L801", name: "What are Information Systems?" },
+      { _id: "L802", name: "Types of Information Systems" },
+      { _id: "L803", name: "IS in Organizations" },
+    ]},
+  { _id: "M502", name: "Week 2 - Database Fundamentals", course: "2301",
+    lessons: [
+      { _id: "L804", name: "Relational Databases" },
+      { _id: "L805", name: "SQL Basics" },
+    ]},
+  { _id: "M503", name: "Week 3 - Systems Analysis", course: "2301",
+    lessons: [
+      { _id: "L806", name: "Requirements Gathering" },
+      { _id: "L807", name: "Use Case Diagrams" },
+    ]},
+  { _id: "M601", name: "Week 1 - Marketing Research Fundamentals", course: "2345",
+    lessons: [
+      { _id: "L901", name: "Research Process Overview" },
+      { _id: "L902", name: "Primary vs Secondary Research" },
+      { _id: "L903", name: "Research Ethics" },
+    ]},
+  { _id: "M602", name: "Week 2 - Survey Design", course: "2345",
+    lessons: [
+      { _id: "L904", name: "Questionnaire Design" },
+      { _id: "L905", name: "Sampling Methods" },
+    ]},
+  { _id: "M603", name: "Week 3 - Data Analysis", course: "2345",
+    lessons: [
+      { _id: "L906", name: "Statistical Analysis Basics" },
+      { _id: "L907", name: "Presenting Research Findings" },
+    ]},
+  { _id: "M701", name: "Week 1 - Introduction to Financial Management", course: "3456",
+    lessons: [
+      { _id: "L1001", name: "Financial Statements Overview" },
+      { _id: "L1002", name: "Time Value of Money" },
+      { _id: "L1003", name: "Risk and Return" },
+    ]},
+  { _id: "M702", name: "Week 2 - Capital Budgeting", course: "3456",
+    lessons: [
+      { _id: "L1004", name: "NPV and IRR" },
+      { _id: "L1005", name: "Project Evaluation" },
+    ]},
+  { _id: "M703", name: "Week 3 - Working Capital Management", course: "3456",
+    lessons: [
+      { _id: "L1006", name: "Cash Management" },
+      { _id: "L1007", name: "Inventory Management" },
+    ]},
+];
