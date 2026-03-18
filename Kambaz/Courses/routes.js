@@ -20,6 +20,13 @@ export default function CourseRoutes(app, db) {
     res.json(courses);
   };
 
+  const findMyEnrollments = (req, res) => {
+    const currentUser = req.session["currentUser"];
+    if (!currentUser) { res.sendStatus(401); return; }
+    const myEnrollments = db.enrollments.filter((e) => e.user === currentUser._id);
+    res.json(myEnrollments);
+  };
+
   const createCourse = (req, res) => {
     const currentUser = req.session["currentUser"];
     const newCourse = dao.createCourse(req.body);
@@ -52,16 +59,11 @@ export default function CourseRoutes(app, db) {
     res.sendStatus(200);
   };
 
-  const findMyEnrollments = (req, res) => {
-    const currentUser = req.session["currentUser"];
-    if (!currentUser) { res.sendStatus(401); return; }
-    const myEnrollments = db.enrollments.filter((e) => e.user === currentUser._id);
-    res.json(myEnrollments);
-  };
-
+  // specific routes BEFORE parameterized routes
   app.get("/api/users/current/enrollments", findMyEnrollments);
-  app.get("/api/users/:userId/courses", findCoursesForEnrolledUser);
   app.post("/api/users/current/courses", createCourse);
+  app.get("/api/users/:userId/courses", findCoursesForEnrolledUser);
+  app.get("/api/courses", findAllCourses);
   app.delete("/api/courses/:courseId", deleteCourse);
   app.put("/api/courses/:courseId", updateCourse);
   app.post("/api/courses/:courseId/enroll", enrollUserInCourse);

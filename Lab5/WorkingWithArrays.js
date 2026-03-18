@@ -10,8 +10,7 @@ export default function WorkingWithArrays(app) {
     const { completed } = req.query;
     if (completed !== undefined) {
       const completedBool = completed === "true";
-      const completedTodos = todos.filter((t) => t.completed === completedBool);
-      res.json(completedTodos);
+      res.json(todos.filter((t) => t.completed === completedBool));
       return;
     }
     res.json(todos);
@@ -88,13 +87,15 @@ export default function WorkingWithArrays(app) {
     res.sendStatus(200);
   };
 
-  app.post("/lab5/todos", postNewTodo);
-  app.delete("/lab5/todos/:id", deleteTodo);
-  app.put("/lab5/todos/:id", updateTodo);
+  // specific routes BEFORE parameterized routes
+  app.get("/lab5/todos/:id/delete", removeTodo);
   app.get("/lab5/todos/create", createNewTodo);
   app.get("/lab5/todos/:id/title/:title", updateTodoTitle);
   app.get("/lab5/todos/:id/completed/:completed", updateTodoCompleted);
   app.get("/lab5/todos/:id/description/:description", updateTodoDescription);
   app.get("/lab5/todos/:id", getTodoById);
   app.get("/lab5/todos", getTodos);
+  app.post("/lab5/todos", postNewTodo);
+  app.delete("/lab5/todos/:id", deleteTodo);
+  app.put("/lab5/todos/:id", updateTodo);
 }
