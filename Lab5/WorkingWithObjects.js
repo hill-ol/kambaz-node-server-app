@@ -4,7 +4,7 @@ const assignment = {
   due: "2021-10-10", completed: false, score: 0,
 };
 
-const module = {
+const moduleObj = {
   id: 1, name: "Introduction to NodeJS",
   description: "Learn the basics of NodeJS",
   course: "CS5610",
@@ -29,17 +29,17 @@ export default function WorkingWithObjects(app) {
     res.json(assignment);
   };
 
-  const getModule = (req, res) => res.json(module);
-  const getModuleName = (req, res) => res.json(module.name);
+  const getModule = (req, res) => res.json(moduleObj);
+  const getModuleName = (req, res) => res.json(moduleObj.name);
   const setModuleName = (req, res) => {
     const { newName } = req.params;
-    module.name = newName;
-    res.json(module);
+    moduleObj.name = newName;
+    res.json(moduleObj);
   };
   const setModuleDescription = (req, res) => {
     const { newDescription } = req.params;
-    module.description = newDescription;
-    res.json(module);
+    moduleObj.description = newDescription;
+    res.json(moduleObj);
   };
 
   app.get("/lab5/assignment/title/:newTitle", setAssignmentTitle);
