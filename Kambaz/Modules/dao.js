@@ -16,6 +16,7 @@ export default function ModulesDao(db) {
 
   const updateModule = (moduleId, moduleUpdates) => {
     const module = db.modules.find((m) => m._id === moduleId);
+    if (!module) return null;
     Object.assign(module, moduleUpdates);
     return module;
   };

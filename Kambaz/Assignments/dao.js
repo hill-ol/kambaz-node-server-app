@@ -16,6 +16,7 @@ export default function AssignmentsDao(db) {
 
   const updateAssignment = (assignmentId, updates) => {
     const assignment = db.assignments.find((a) => a._id === assignmentId);
+    if (!assignment) return null;
     Object.assign(assignment, updates);
     return assignment;
   };
