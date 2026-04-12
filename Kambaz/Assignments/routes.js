@@ -3,24 +3,25 @@ import AssignmentsDao from "./dao.js";
 export default function AssignmentsRoutes(app, db) {
   const dao = AssignmentsDao(db);
 
-  const findAssignmentsForCourse = (req, res) => {
-    res.json(dao.findAssignmentsForCourse(req.params.courseId));
+  const findAssignmentsForCourse = async (req, res) => {
+    const assignments = await dao.findAssignmentsForCourse(req.params.courseId);
+    res.json(assignments);
   };
 
-  const createAssignmentForCourse = (req, res) => {
+  const createAssignmentForCourse = async (req, res) => {
     const { courseId } = req.params;
-    const newAssignment = dao.createAssignment({ ...req.body, course: courseId });
+    const newAssignment = await dao.createAssignment({ ...req.body, course: courseId });
     res.json(newAssignment);
   };
 
-  const deleteAssignment = (req, res) => {
-    dao.deleteAssignment(req.params.assignmentId);
+  const deleteAssignment = async (req, res) => {
+    await dao.deleteAssignment(req.params.assignmentId);
     res.sendStatus(200);
   };
 
-  const updateAssignment = (req, res) => {
-    const updated = dao.updateAssignment(req.params.assignmentId, req.body);
-    res.json(updated);
+  const updateAssignment = async (req, res) => {
+    await dao.updateAssignment(req.params.assignmentId, req.body);
+    res.sendStatus(200);
   };
 
   app.get("/api/courses/:courseId/assignments", findAssignmentsForCourse);

@@ -1,19 +1,37 @@
+import model from "./model.js";
 import { v4 as uuidv4 } from "uuid";
 
 export default function EnrollmentsDao(db) {
   const enrollUserInCourse = (userId, courseId) => {
-    const newEnrollment = { _id: uuidv4(), user: userId, course: courseId };
-    db.enrollments.push(newEnrollment);
-    return newEnrollment;
+    return model.create({
+      _id: `${userId}-${courseId}`,
+      user: userId,
+      course: courseId,
+    });
   };
 
   const unenrollUserFromCourse = (userId, courseId) => {
-    db.enrollments = db.enrollments.filter(
-      (e) => !(e.user === userId && e.course === courseId)
-    );
+    return model.deleteOne({ user: userId, course: courseId });
   };
 
-  const findAllEnrollments = () => db.enrollments;
+  const findAllEnrollments = () => model.find();
 
-  return { enrollUserInCourse, unenrollUserFromCourse, findAllEnrollments };
+  const findCoursesForUser = async (userId) => {
+    const enrollments = await model.find({ user: userId }).populate("course");
+    return enrollments.map((e) => e.course);
+  };
+
+  const findUsersForCourse = async (courseId) => {
+    const enrollments = await model.find({ course: courseId }).populate("user");
+    return enrollments.map((e) => e.user);
+  };
+
+  const unenrollAllUsersFromCourse = (courseId) => {
+    return model.deleteMany({ course: courseId });
+  };
+
+  return {
+    enrollUserInCourse, unenrollUserFromCourse, findAllEnrollments,
+    findCoursesForUser, findUsersForCourse, unenrollAllUsersFromCourse,
+  };
 }
